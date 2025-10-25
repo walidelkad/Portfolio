@@ -1,5 +1,9 @@
 ---
+import Navigation from './components/Navigation.astro';
+import Footer from './components/Footer.astro';
+import './styles/reset.css';
 import './styles/style.css';
+
 const pageTitle = "Walid El Kaddouri";
 ---
 
@@ -12,11 +16,11 @@ const pageTitle = "Walid El Kaddouri";
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<a href="/">Home</a>
-		<a href="/about/">About</a>
+		<Navigation />
 		 <h1>{pageTitle}</h1>
 		    <ul>
       			<li><a href="/posts/post-1/">Post 1</a></li>
     		</ul>
 	</body>
+	    <Footer />
 </html>
