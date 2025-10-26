@@ -1,75 +1,261 @@
-html {
-  background-color: #f1f5f9;
-  font-family: sans-serif;
+:root {
+  --bg: #0b0b0b;       
+  --text: #ffffff;     
+  --muted: #c7c7c7;   
+  --accent: #ffffff;   
+  --border: rgba(255,255,255,0.15);
+
+
+  --base: 18px;
+  --h1: 2.25rem;
+  --h2: 1.5rem;
+  --h3: 1.125rem;
+  --line-height: 1.6;
 }
+
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 
 body {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 80ch;
-  padding: 1rem;
+  line-height: 1.4;
+  color: #ffffff;
   line-height: 1.5;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: var(--base);
+  
+}
+.buttondiv {
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+
 }
 
-* {
-  box-sizing: border-box;
+.button {
+  background-color: rgb(120, 70, 255);   /* Bold accent color */
+  color: #fff;                           /* White text */
+  padding: 0.75rem 4rem;               /* Slightly wider */
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid transparent;         /* Allows border hover effect */
+  transition: all 0.3s ease;             /* Smooth hover transitions */
+  cursor: pointer;
+  display: inline-block;
+  text-transform: uppercase;
+
+
+}
+
+.button:hover {
+  background-color: transparent;         /* Invert background */
+  color: rgb(120, 70, 255);              /* Text takes button color */
+  transform: translateY(-2px);           /* Subtle lift effect */
+}
+
+.button:active {
+  transform: translateY(0);              /* Return when clicked */
+}
+
+.header__title {
+  text-align: start;
+  font-size: 10rem;
+  line-height: 0.9;
+  margin-top: 16rem;
+}
+
+p{
+  margin-bottom: var(--sp-l);
+  max-width: 60ch;
+}
+
+strong {
+  font-weight: bold;
+  background-color: var(--c-primary-light);
 }
 
 h1 {
-  margin: 1rem 0;
-  font-size: 2.5rem;
+  font-size: 20rem;
+  font-weight: bold;
+  background-color: var(--c-primary);
+  padding: var(--sp-m);
+  text-align: center;
+}
+
+h2 {
+  background-color: var(--c-primary);
+  font-weight: bold;
+  font-size: var(--fs-1);
+  font-weight: bold;
+  margin: var(--sp-m) 0;
+}
+
+h3 {
+  font-size: var(--fs-1);
+  font-weight: bold;
+  margin: var(--sp-m)  0;
+  border-bottom: 0.2rem solid var(--c-primary);
+  text-transform: capitalize;
+}
+
+
+.page__content {
+  padding: 0 1rem;
 }
 
 .menu {
-  background-color: #0d0950;
-  border: none;
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 5px 10px;
+  display: flex;
+  justify-content: center;   
+  align-items: center;       
+  gap: 2rem;                 
+  list-style: none;
+  padding: 1rem 0;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  
 }
 
-.nav-links {
-  width: 100%;
-  display: none;
+
+.menu__link {
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+  color: white;
+}
+
+.menu__link:hover {
+  color: var(--accent);
+}
+
+
+.menu__link::before {
+  content: "";
+  position: absolute;
+  display: block;
+  inset: 100% 0 0 0;
+  z-index: -1;
+  background-color: var(--c-primary);
+}
+
+
+.menu__link:hover::before {
+  inset: 0 0 0 0;
+}
+
+.intro__text {
+  font-size: 5rem;
+  line-height: 0.9;
+}
+
+
+.style {
+  background-color: var(--c-primary-mid);
+  padding: var(--sp-s);
+}
+
+.awards__list {
+  list-style: circle;
+}
+.awards__list li {
+  margin-left: var(--sp-l);
+}
+
+.page__footer {
+  font-size: var(--fs-1);
+  background-color: #ffeb3b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-m);
+  margin-top: var(--sp-l);
+}
+.page__footer p {
   margin: 0;
 }
 
-.nav-links a {
-  display: block;
-  text-align: center;
-  padding: 10px 0;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #0d0950;
+
+@media  screen and (min-width: 25em){
+    body {
+      background-color: rgb(202, 202, 202);
+    }
 }
 
-.nav-links a:hover,
-.nav-links a:focus {
-  background-color: #ff9776;
+@media  screen and (min-width: 30em) {
+  body {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 200ch;
+  padding: 1rem;
+  line-height: 1.5;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: var(--base);
+  background-color: #f1ffc0;  
+  line-height: var(--line-height);
 }
 
-:has(.menu[aria-expanded="true"]) .nav-links {
-  display: unset;
+.container {
+  width: min(100%, var(--container-max));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
 }
 
-@media screen and (min-width: 636px) {
-  .nav-links {
-    margin-left: 5em;
-    display: block;
-    position: static;
-    width: auto;
-    background: none;
+
+}
+
+@media  screen and (min-width: 40em) {
+  body {
+  margin: 0 auto;
+  background-color: #00ff77;
+
+}
+
+
+}
+
+@media  screen and (min-width: 55em) {
+  body {
+  margin: 0 auto;
+  background-color: #ff008c;
+
+}
+}
+
+@media  screen and (min-width: 60em) {
+  body {
+    background-color: #171717;
+
   }
 
-  .nav-links a {
-    display: inline-block;
-    padding: 15px 20px;
-  }
-
-    .menu {
-    display: none;
-  }
 }
+
+
+
+
+
+
+
