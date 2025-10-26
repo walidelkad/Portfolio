@@ -36,6 +36,9 @@ img {
   border: 0;
 }
 
+.container {
+  overflow: hidden;
+}
 
 body {
   line-height: 1.4;
@@ -91,6 +94,14 @@ p{
   max-width: 60ch;
 }
 
+.highlightYellow {
+  text-decoration: underline;
+  color: yellow;
+  text-decoration-color: yellow;   /* sets underline color */
+  text-decoration-thickness: 3px;  /* optional thickness */
+  text-underline-offset: 3px;      /* optional spacing from text */
+}
+
 strong {
   font-weight: bold;
   background-color: var(--c-primary-light);
@@ -111,6 +122,24 @@ h2 {
   font-weight: bold;
   margin: var(--sp-m) 0;
 }
+.works__title {
+  font-size: 6rem;
+}
+.myWorks {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    grid-gap: var(--sp-l);
+}
+.work1, .work2, .work3 {
+  grid-column: 1;
+}
+.work2 {
+  grid-column: 2 ;
+}
+.work3 {
+  grid-column: 3 ;
+}
+
 
 h3 {
   font-size: var(--fs-1);
@@ -170,33 +199,9 @@ h3 {
 .intro__text {
   font-size: 5rem;
   line-height: 0.9;
+  margin-bottom: 20rem;
 }
 
-
-.style {
-  background-color: var(--c-primary-mid);
-  padding: var(--sp-s);
-}
-
-.awards__list {
-  list-style: circle;
-}
-.awards__list li {
-  margin-left: var(--sp-l);
-}
-
-.page__footer {
-  font-size: var(--fs-1);
-  background-color: #ffeb3b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--sp-m);
-  margin-top: var(--sp-l);
-}
-.page__footer p {
-  margin: 0;
-}
 
 
 @media  screen and (min-width: 25em){
